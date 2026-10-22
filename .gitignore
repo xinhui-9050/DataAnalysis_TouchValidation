@@ -9,8 +9,5 @@ __pycache__/
 # macOS metadata
 .DS_Store
 
-# Keep the final report and numerical results; exclude report sources and assets.
-/reports/*
-!/reports/report.pdf
-!/reports/analysis_results.json
-!/reports/synthetic_validation_results.json
+# Keep report.pdf at the repository root; exclude report sources and assets.
+/reports/
