@@ -1,0 +1,360 @@
+{
+  "purpose": "One fixed synthetic sample per declared distribution family; smoke checks only, not repeated Monte Carlo calibration or an accuracy estimate.",
+  "lsl": 550.0,
+  "usl": 650.0,
+  "analysis_py_sha256": "51df877ceb318b8ab5a83ec3d6b2a32f60c8bc7143402ae3ad0f6f64dc0a6918",
+  "generation_verification": {
+    "method": "Recreated all four files in the same sequence using one numpy.random.default_rng(42); compared current CSV values against generated arrays.",
+    "seed": 42,
+    "normal": {
+      "mean": 600,
+      "std": 10
+    },
+    "norm2": {
+      "means": [
+        580,
+        620
+      ],
+      "stds": [
+        5,
+        5
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "norm3": {
+      "means": [
+        570,
+        600,
+        630
+      ],
+      "stds": [
+        4,
+        5,
+        4
+      ],
+      "weights": [
+        0.3,
+        0.4,
+        0.3
+      ]
+    },
+    "lognormal": {
+      "log_mean": "ln(600)",
+      "log_std": 0.25
+    },
+    "sample_size_each": 100,
+    "draw_order": "normal(100); choice(2, size=100, p=[.5,.5]); normal(component means, component stds); choice(3, size=100, p=[.3,.4,.3]); normal(component means, component stds); lognormal(log(600), .25, 100)"
+  },
+  "datasets": [
+    {
+      "file": "validation/validate_norm.csv",
+      "sha256": "2c3bf65b9fba37c6f8663b7bcd6eef9a9d32866d247c7ad0a43d932338cb2e67",
+      "declared_family": "normal",
+      "n": 100,
+      "missing": 0,
+      "generation_matches_current_csv": true,
+      "generation_max_absolute_difference": 0.0,
+      "fits": [
+        {
+          "model": "normal",
+          "parameters": [
+            599.4973038638966,
+            7.72784072879302
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -346.3768023025991,
+          "bic": 701.9639449771744,
+          "delta_bic": 0.0,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm2",
+          "parameters": [
+            598.1300187097072,
+            7.732636307272918,
+            606.3159998213378,
+            1.8794269127442487,
+            0.8329721028734167
+          ],
+          "parameter_count": 5,
+          "log_likelihood": -342.9900636356895,
+          "bic": 709.0059782013195,
+          "delta_bic": 7.042033224145143,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm3",
+          "parameters": [
+            597.1349397591924,
+            7.112785409927822,
+            621.4164760045637,
+            0.00772784075005784,
+            606.3888854031503,
+            2.376040554093818,
+            0.7609535802078001,
+            0.041822666180635466
+          ],
+          "parameter_count": 8,
+          "log_likelihood": -336.47336675646005,
+          "bic": 709.7880950008248,
+          "delta_bic": 7.824150023650418,
+          "scale_bound_hit": true
+        },
+        {
+          "model": "lognormal",
+          "parameters": [
+            0.012904322103796908,
+            599.4474280199867
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -346.4753879553853,
+          "bic": 702.1611162827468,
+          "delta_bic": 0.1971713055723967,
+          "scale_bound_hit": false
+        }
+      ],
+      "best_model": "normal",
+      "best_scale_bound_hit": false,
+      "best_fitted_percentile_cpk": 2.135020876723281,
+      "existing_fit_figure": "validation/output/norm/thickness_distribution_fit.png",
+      "existing_fit_figure_n": 100,
+      "existing_fit_figure_n_visual_verified": true,
+      "existing_fit_figure_matches_csv_n": true
+    },
+    {
+      "file": "validation/validate_norm2.csv",
+      "sha256": "b0d2453e6091cc5e86734b78167dd848fe90c9e818afbc276471a7b5ca69efc6",
+      "declared_family": "norm2",
+      "n": 100,
+      "missing": 0,
+      "generation_matches_current_csv": true,
+      "generation_max_absolute_difference": 0.0,
+      "fits": [
+        {
+          "model": "normal",
+          "parameters": [
+            599.3513317631757,
+            20.705529899603643
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -444.93393427075364,
+          "bic": 899.0782089134834,
+          "delta_bic": 131.003798186199,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm2",
+          "parameters": [
+            579.6615300967297,
+            4.9365694580148745,
+            619.8444602852735,
+            5.107969677800119,
+            0.5099958751726377
+          ],
+          "parameter_count": 5,
+          "log_likelihood": -372.524279898672,
+          "bic": 768.0744107272844,
+          "delta_bic": 0.0,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm3",
+          "parameters": [
+            578.7493902731669,
+            3.717519270567718,
+            591.9407279507942,
+            2.1009765411832673,
+            619.844646350859,
+            5.1075309420437645,
+            0.4747305731491321,
+            0.0671443153000937
+          ],
+          "parameter_count": 8,
+          "log_likelihood": -367.8200513609912,
+          "bic": 772.4814642098871,
+          "delta_bic": 4.4070534826026915,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "lognormal",
+          "parameters": [
+            0.03453592822970922,
+            598.9939190597472
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -444.84349046753374,
+          "bic": 898.8973213070436,
+          "delta_bic": 130.8229105797592,
+          "scale_bound_hit": false
+        }
+      ],
+      "best_model": "norm2",
+      "best_scale_bound_hit": false,
+      "best_fitted_percentile_cpk": 1.3616431693472,
+      "existing_fit_figure": "validation/output/norm2/thickness_distribution_fit.png",
+      "existing_fit_figure_n": 100,
+      "existing_fit_figure_n_visual_verified": true,
+      "existing_fit_figure_matches_csv_n": true
+    },
+    {
+      "file": "validation/validate_norm3.csv",
+      "sha256": "328761b74a06bbc723d54e135b481c7d3ad3e41ccec4eaefef79309c2319d35a",
+      "declared_family": "norm3",
+      "n": 100,
+      "missing": 0,
+      "generation_matches_current_csv": true,
+      "generation_max_absolute_difference": 0.0,
+      "fits": [
+        {
+          "model": "normal",
+          "parameters": [
+            603.1109689964936,
+            22.581465844013213
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -453.60680076230705,
+          "bic": 916.4239418965902,
+          "delta_bic": 103.13013112623275,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm2",
+          "parameters": [
+            591.6707341661031,
+            17.243607635023206,
+            629.3326756612934,
+            3.100270619080713,
+            0.6962392337870772
+          ],
+          "parameter_count": 5,
+          "log_likelihood": -427.0966848090497,
+          "bic": 877.2192205480399,
+          "delta_bic": 63.925409777682376,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm3",
+          "parameters": [
+            570.1464324096557,
+            3.0747181009441227,
+            600.9289285248789,
+            5.214552284816944,
+            629.0790269485509,
+            3.5097066724036052,
+            0.23999949799467465,
+            0.5526883527778906
+          ],
+          "parameter_count": 8,
+          "log_likelihood": -388.2262246412264,
+          "bic": 813.2938107703575,
+          "delta_bic": 0.0,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "lognormal",
+          "parameters": [
+            0.0376387060101151,
+            602.6854241675983
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -454.06115879339546,
+          "bic": 917.3326579587671,
+          "delta_bic": 104.03884718840959,
+          "scale_bound_hit": false
+        }
+      ],
+      "best_model": "norm3",
+      "best_scale_bound_hit": false,
+      "best_fitted_percentile_cpk": 1.307615106202547,
+      "existing_fit_figure": "validation/output/norm3/thickness_distribution_fit.png",
+      "existing_fit_figure_n": 100,
+      "existing_fit_figure_n_visual_verified": true,
+      "existing_fit_figure_matches_csv_n": true
+    },
+    {
+      "file": "validation/validate_norm_lognormal.csv",
+      "sha256": "4965a080d8969ae5b3b094aee448d772b2589352cdac642ec6928dcfc0344905",
+      "declared_family": "lognormal",
+      "n": 100,
+      "missing": 0,
+      "generation_matches_current_csv": true,
+      "generation_max_absolute_difference": 1.1368683772161603e-13,
+      "fits": [
+        {
+          "model": "normal",
+          "parameters": [
+            604.0537025794446,
+            160.6046854718107
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -649.7884502630175,
+          "bic": 1308.787240898011,
+          "delta_bic": 7.977045434942511,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm2",
+          "parameters": [
+            545.8929109462251,
+            111.90857248333083,
+            812.5814465534679,
+            133.2808781302191,
+            0.7819194391934464
+          ],
+          "parameter_count": 5,
+          "log_likelihood": -645.6211815844377,
+          "bic": 1314.2682140988159,
+          "delta_bic": 13.458018635747294,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "norm3",
+          "parameters": [
+            501.20492912160756,
+            89.33967327402868,
+            661.278426291336,
+            52.30401115663312,
+            838.833035918648,
+            117.0980690602663,
+            0.5785951023051068,
+            0.5269991558956532
+          ],
+          "parameter_count": 8,
+          "log_likelihood": -644.6197353303806,
+          "bic": 1326.080832148666,
+          "delta_bic": 25.270636685597538,
+          "scale_bound_hit": false
+        },
+        {
+          "model": "lognormal",
+          "parameters": [
+            0.26452264227607586,
+            583.4094001280978
+          ],
+          "parameter_count": 2,
+          "log_likelihood": -645.7999275455462,
+          "bic": 1300.8101954630686,
+          "delta_bic": 0.0,
+          "scale_bound_hit": false
+        }
+      ],
+      "best_model": "lognormal",
+      "best_scale_bound_hit": false,
+      "best_fitted_percentile_cpk": 0.09423187176972853,
+      "existing_fit_figure": "validation/output/norm_lognormal/thickness_distribution_fit.png",
+      "existing_fit_figure_n": 100,
+      "existing_fit_figure_n_visual_verified": true,
+      "existing_fit_figure_matches_csv_n": true
+    }
+  ],
+  "limitations": [
+    "One fixed sample per distribution is a smoke check, not repeated Monte Carlo model-selection calibration.",
+    "Normal and lognormal BIC differ by only 0.197171 on the normal sample, so that family distinction is weak in this sample.",
+    "The non-winning norm3 fit on the normal sample reaches a scale bound and creates a narrow spurious component; inspect bound flags rather than judging by likelihood alone.",
+    "Capability values for synthetic distributions use assignment thickness limits 550 and 650, not separately designed engineering specifications for the synthetic samples.",
+    "Existing plot title sample counts were inspected visually; no new figures were generated in this check."
+  ]
+}
